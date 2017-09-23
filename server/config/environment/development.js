@@ -8,7 +8,7 @@ module.exports = {
     sequelize: {
         database: "mqtt",
         username: "postgres",
-        password: "untrodden123",
+        password: "rajat",
 
         // username: "muffin_db",
         // password: "muffindb123",

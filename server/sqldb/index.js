@@ -13,7 +13,6 @@ var db = {
 
 };
 // Insert models below
-
-db.Thing = db.sequelize.import('../api/thing/thing.model');
+db.Mqtt = db.sequelize.import('../api/mqtt/mqtt.model');
 
 module.exports = db;
