@@ -8,6 +8,7 @@ import express from 'express';
 import sqldb from './sqldb';
 import config from './config/environment/';
 import http from 'http';
+import socket from './config/socket';
 
 // Populate databases with sample data
 if (config.seedDB) { require('./config/seed'); }
@@ -37,5 +38,6 @@ sqldb.sequelize.sync()
         console.log('Server failed to start due to error: %s', err);
     });
 
+console.log("Hi123");
 // Expose app
 exports = module.exports = app;
