@@ -7,14 +7,14 @@ module.exports = {
     // Sequelize connecton opions
     sequelize: {
         database: "mqtt",
-        username: "postgres",
-        password: "rajat",
+        username: "muffin_db",
+        password: "muffindb123",
 
         // username: "muffin_db",
         // password: "muffindb123",
         options: {
-            host: process.env.POSTGRESQL_LOCAL_HOST,
-            // host: "postgres.cbsw0q944uax.us-east-1.rds.amazonaws.com",
+            host:"postgres.cbsw0q944uax.us-east-1.rds.amazonaws.com",
+            // host: "process.env.POSTGRESQL_LOCAL_HOST",
             dialect: 'postgres',
             define: {
                 timestamps: false
