@@ -12,7 +12,7 @@ var db = {
     sequelize: new Sequelize(config.sequelize.database, config.sequelize.username, config.sequelize.password, config.sequelize.options)
 
 };
-// Insert models below
+// Insert models below from satabase
 db.Mqtt = db.sequelize.import('../api/mqtt/mqtt.model');
 
 module.exports = db;
