@@ -27,8 +27,6 @@ const client = AWSMqtt.connect({
   });
   client.on('message', (topic, message) => {
     var data = "";
-    debugger;
-    console.log(topic, message)
     try {
       JSON.parse(message.toString()) ;
     } catch (error) {
@@ -37,7 +35,7 @@ const client = AWSMqtt.connect({
     }
     if(data=="")
       data=(JSON.parse(message.toString()).message);
-      console.log(data);
+      console.log("topic"+ Topic+"message"+data);
   });
   client.on('offline', () => {
   client.subscribe('/myTopic/off');
