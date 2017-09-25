@@ -83,8 +83,7 @@ exports.create = function(req, res) {
       console.log("api call");
       var Device_status = req.body.status;
       var Device_id = req.body.Device_id;
-      client.publish('/Devices/'+Device_id+'/status',Device_status);
-      message(client);
+      client.publish('/Devices/'+Device_id+'/status',Device_status);;
       res.send("server is start");
 };
 
@@ -116,21 +115,3 @@ exports.destroy = function(req, res) {
     .then(removeEntity(res))
     .catch(handleError(res));
 };
-function message(client)
-{
-   console.log("dsds");
-    client.on('message', (topic, message) => {
-      console.log("messages"+JSON.parse(message));
-      var data = parseInt(JSON.parse(message));
-      console.log(data);
-      /*var mess="" ;
-      var temp =JSON.parse(JSON.stringify(message)).data;
-      for(var x=0;x<temp.length;x++)
-      {
-        mess = mess+parseInt(temp[x]).toString(16);
-      }
-      console.log(parseInt(mess));
-      debugger;
-    });*/
-  });
-}

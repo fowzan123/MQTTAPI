@@ -1,6 +1,8 @@
+'use strict';
 const AWS = require('aws-sdk');
 const AWSMqtt = require('aws-mqtt');
 const WebSocket = require('ws');
+var data ="";
 const client = AWSMqtt.connect({
     WebSocket: WebSocket,
     region: AWS.config.region,
@@ -20,6 +22,15 @@ const client = AWSMqtt.connect({
     client.subscribe('/Devices/+/automate');
     client.subscribe('/Devices/+/tamper');
   });  
+  client.on('message', (topic, message) => {
+    console.log(topic, message)
+    console.log("messages"+message.toString());
+  });
+  client.on('message', (topic, message) => {
+    console.log(topic, message)
+    data = JSON.parse(message.toString());
+    console.log(data.message);
+  });
   client.on('offline', () => {
   client.subscribe('/myTopic/off');
   client.publish('/myTopic/off','i am gone');
