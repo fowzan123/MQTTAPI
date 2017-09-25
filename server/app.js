@@ -9,6 +9,7 @@ import sqldb from './sqldb';
 import config from './config/environment/';
 import http from 'http';
 import socket from './config/socket';
+import pubnub from './config/pubnub';
 
 // Populate databases with sample data
 if (config.seedDB) { require('./config/seed'); }
