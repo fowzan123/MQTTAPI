@@ -83,7 +83,7 @@ exports.create = function(req, res) {
       console.log("api call");
       var Device_status = req.body.status;
       var Device_id = req.body.Device_id;
-      client.publish('/Devices/'+Device_id+'/status',Device_status);;
+      client.publish('/Devices/'+Device_id+'/status',Device_status);
       res.send("server is start");
 };
 

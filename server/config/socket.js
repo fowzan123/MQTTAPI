@@ -2,7 +2,6 @@
 const AWS = require('aws-sdk');
 const AWSMqtt = require('aws-mqtt');
 const WebSocket = require('ws');
-var data ="";
 const client = AWSMqtt.connect({
     WebSocket: WebSocket,
     region: AWS.config.region,
@@ -27,9 +26,18 @@ const client = AWSMqtt.connect({
     console.log("messages"+message.toString());
   });
   client.on('message', (topic, message) => {
+    var data = "";
+    debugger;
     console.log(topic, message)
-    data = JSON.parse(message.toString());
-    console.log(data.message);
+    try {
+      JSON.parse(message.toString()) ;
+    } catch (error) {
+        data = (message.toString()); 
+        //console.log(error);
+    }
+    if(data=="")
+      data=(JSON.parse(message.toString()).message);
+      console.log(data);
   });
   client.on('offline', () => {
   client.subscribe('/myTopic/off');
