@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-# rajat
+# MQTTAPI
+Mqtt api server for iot connection using post request the data is send to aws iot console using aws iot script and store status of device in postgres database using express js and mqtt server configuration code using pubnub to send data in pubnub channel.
+
 
 This project was generated with the [Express API Generator](https://github.com/ioneyed/generator-expressjs-api) version 0.0.1.
 
@@ -29,7 +30,4 @@ Run `grunt build` for building and `grunt serve` for preview.
 
 Running `npm test` will run the unit tests with karma.
 =======
-# MQTTAPI
-Mqtt api server for iot connection using post request the data is send to aws iot console using aws iot script and store status of device in postgres database using express js and mqtt server configuration code using pubnub to send data in pubnub channel.
 
->>>>>>> 5a086a34f8b4858dae632ec065842a6bedba0e26
