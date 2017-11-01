@@ -1,4 +1,9 @@
-# rajat
+# MQTTAPI
+
+Mqtt api server for iot connection using post request the data is send to aws iot console using aws iot script and store status of device in postgres database using express js and mqtt server configuration code using pubnub to send data in pubnub channel.
+This is the microservice of an aws mqtt server you configuer your own aws credential and pubnub credentials for aws account config link 
+https://aws.amazon.com/config/
+
 
 This project was generated with the [Express API Generator](https://github.com/ioneyed/generator-expressjs-api) version 0.0.1.
 
